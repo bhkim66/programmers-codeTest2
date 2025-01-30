@@ -14,7 +14,31 @@ public class Main {
         int[][] edges2 = {{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}};
 //        [4, 0, 1, 2]
 
-        int[] solution2 = solution(edges2);
+//        int[] solution2 = solution(edges2);
+
+        int[][] land1 = {{0, 0, 0, 1, 1, 1, 0, 0}, {0, 0, 0, 0, 1, 1, 0, 0}, {1, 1, 0, 0, 0, 1, 1, 0}, {1, 1, 1, 0, 0, 0, 0, 0}, {1, 1, 1, 0, 0, 0, 1, 1}};
+        //9
+        Sichu sichu = new Sichu();
+        int sichu1 = sichu.solution(land1);
+        System.out.println("sichu1 = " + sichu1);
+
+        int[][] land2 = {{1, 0, 1, 0, 1, 1}, {1, 0, 1, 0, 0, 0}, {1, 0, 1, 0, 0, 1}, {1, 0, 0, 1, 0, 0}, {1, 0, 0, 1, 0, 1}, {1, 0, 0, 0, 0, 0}, {1, 1, 1, 1, 1, 1}};
+        //16
+        int sichu2 = sichu.solution(land2);
+        System.out.println("sichu2 = " + sichu2);
+
+        int[][] land3 = {
+                {0,1,0,1,0},
+                {1,1,1,1,0},
+                {0,1,0,1,0},
+                {0,1,1,1,0},
+                {0,0,0,0,0},
+                {0,0,1,0,0},
+                {0,0,1,0,0}
+        };
+        int sichu3 = sichu.solution(land3);
+        System.out.println("sichu3 = " + sichu3);
+
 
     }
 
