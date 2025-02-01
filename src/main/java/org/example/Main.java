@@ -16,112 +16,63 @@ public class Main {
 
 //        int[] solution2 = solution(edges2);
 
-        int[][] land1 = {{0, 0, 0, 1, 1, 1, 0, 0}, {0, 0, 0, 0, 1, 1, 0, 0}, {1, 1, 0, 0, 0, 1, 1, 0}, {1, 1, 1, 0, 0, 0, 0, 0}, {1, 1, 1, 0, 0, 0, 1, 1}};
-        //9
-        Sichu sichu = new Sichu();
-        int sichu1 = sichu.solution(land1);
-        System.out.println("sichu1 = " + sichu1);
+//        int[][] land1 = {{0, 0, 0, 1, 1, 1, 0, 0}, {0, 0, 0, 0, 1, 1, 0, 0}, {1, 1, 0, 0, 0, 1, 1, 0}, {1, 1, 1, 0, 0, 0, 0, 0}, {1, 1, 1, 0, 0, 0, 1, 1}};
+//        //9
+//        Sichu sichu = new Sichu();
+//        int sichu1 = sichu.solution(land1);
+//        System.out.println("sichu1 = " + sichu1);
+//
+//        int[][] land2 = {{1, 0, 1, 0, 1, 1}, {1, 0, 1, 0, 0, 0}, {1, 0, 1, 0, 0, 1}, {1, 0, 0, 1, 0, 0}, {1, 0, 0, 1, 0, 1}, {1, 0, 0, 0, 0, 0}, {1, 1, 1, 1, 1, 1}};
+//        //16
+//        int sichu2 = sichu.solution(land2);
+//        System.out.println("sichu2 = " + sichu2);
+//
+//        int[][] land3 = {
+//                {0,1,0,1,0},
+//                {1,1,1,1,0},
+//                {0,1,0,1,0},
+//                {0,1,1,1,0},
+//                {0,0,0,0,0},
+//                {0,0,1,0,0},
+//                {0,0,1,0,0}
+//        };
+//        int sichu3 = sichu.solution(land3);
+//        System.out.println("sichu3 = " + sichu3);
 
-        int[][] land2 = {{1, 0, 1, 0, 1, 1}, {1, 0, 1, 0, 0, 0}, {1, 0, 1, 0, 0, 1}, {1, 0, 0, 1, 0, 0}, {1, 0, 0, 1, 0, 1}, {1, 0, 0, 0, 0, 0}, {1, 1, 1, 1, 1, 1}};
-        //16
-        int sichu2 = sichu.solution(land2);
-        System.out.println("sichu2 = " + sichu2);
+        AnalogClock analogClock = new AnalogClock();
 
-        int[][] land3 = {
-                {0,1,0,1,0},
-                {1,1,1,1,0},
-                {0,1,0,1,0},
-                {0,1,1,1,0},
-                {0,0,0,0,0},
-                {0,0,1,0,0},
-                {0,0,1,0,0}
-        };
-        int sichu3 = sichu.solution(land3);
-        System.out.println("sichu3 = " + sichu3);
+//        int h = 0, m = 5, s = 30;
+//        int h0 = 0, m0 = 7, s0 = 0;
+//        int solution0 = analogClock.solution(h, m, s, h0, m0, s0); // 2
+//
+//        int h1 = 12, m1 = 0, s1 = 0;
+//        int h2 = 12, m2 = 0, s2 = 30;
+//
+//        int solution1 = analogClock.solution(h1, m1, s1, h2, m2, s2); // 1
 
+//        int h3 = 0, m3 = 6, s3 = 1;
+//        int h4 = 0, m4 = 6, s4 = 6;
+//        int solution2 = analogClock.solution(h3, m3, s3, h4, m4, s4); //0
 
-    }
+//        int h5 = 11, m5 = 59, s5 = 30;
+//        int h6 = 12, m6 = 0, s6 = 0;
+//        int solution3 = analogClock.solution(h5, m5, s5, h6, m6, s6); //1
 
-    public static int[] solution(int[][] edges) {
-        int[] answer = new int[4];
-        List<Integer>[] adjList = new ArrayList[1000001];
-        int[][] inNout = new int[1000001][3];
-        for(int[] edge : edges){
-            int a = edge[0];
-            int b = edge[1];
-            inNout[a][0]++;
-            inNout[b][1]++;
-            inNout[a][2] = 1;
-            inNout[b][2] = 1;
-            // a->b연결관계 표시
-            if(adjList[a] == null){
-                adjList[a] = new ArrayList<Integer>();
-                adjList[a].add(b);
-            }
-            else adjList[a].add(b);
-        }
-        int idx = 0;
-        for(int i=0; i<1000001; i++){
-            //들어오는 간선은 없지만 나가는 간선이 2이상이면 생성된 정점
-            if(inNout[i][1] == 0 && inNout[i][0] >=2){
-                idx = i;
-                answer[0] = i;
-            }
-        }
-        //생성된 정점과 연결된 정점들 in 간선 감소시켜주기
-        int totalCount = 0; //전체 모양 그래프 개수
-        for(int x : adjList[idx]){
-            inNout[x][1]--;
-            totalCount++;
-        }
-        inNout[idx][0] = 0;
-        inNout[idx][1] = 0;
-        inNout[idx][2] = 0;
-        for(int i=0; i<1000001; i++){
-            //막대 그래프
-            if(inNout[i][1] == 0 && inNout[i][2] ==1)answer[2]++;
+        int h7 = 11, m7 = 58, s7 = 59;
+        int h8 = 11, m8 = 59, s8 = 0;
+        int solution4 = analogClock.solution(h7, m7, s7, h8, m8, s8); //1
 
-            //8자모양 그래프
-            if(inNout[i][1] == 2 && inNout[i][0]==2) answer[3]++;
-        }
-        answer[1] = totalCount - (answer[2] + answer[3]);
+        int h9 = 1, m9 = 5, s9 = 5;
+        int h10 = 1, m10 = 5, s10 = 6;
+        int solution5 = analogClock.solution(h9, m9, s9, h10, m10, s10); //2
 
-        return answer;
+        int h11 = 0, m11 = 0, s11 = 0;
+        int h12 = 23, m12 = 59, s12 = 59;
+        int solution6 = analogClock.solution(h11, m11, s11, h12, m12, s12); //2852
     }
 
 
 
-//    public static int[] solution(int[][] edges) {
-//        int[] answer = {};
-//
-//        HashMap<Integer, Integer> map1 = new HashMap<>();
-//
-//        for (int[] edge : edges) {
-//            if(map1.containsKey(edge[0])) {
-//                map1.put(edge[0], map1.get(edge[0]) + 1 );
-//            } else {
-//                map1.put(edge[0], 1);
-//            }
-//        }
-//        System.out.println("map1 = " + map1);
-//
-//        HashMap<Integer, Integer> map2 = new HashMap<>();
-//
-//        for (int[] edge : edges) {
-//            if(map2.containsKey(edge[1])) {
-//                map2.put(edge[1], map2.get(edge[1]) + 1 );
-//            } else {
-//                map2.put(edge[1], 1);
-//            }
-//        }
-//        System.out.println("map2 = " + map2);
-//
-////        map1.forEach();
-//
-//
-//        return answer;
-//
-//    }
 
 
 }
